@@ -1,24 +1,25 @@
 import React from "react";
 import Taskform from "./Taskform";
 import Task from "./Task";
-import useTaskManager from "./useTaskManager"; // Importa el hook personalizado
+import useTaskmanager from "./Taskmanager"; 
 
 function Tasklist() {
-  const { tasks, addTask, deleteTask, updateTask } = useTaskManager(); // Usa el hook
+  const { tareas, agregarTarea, eliminarTarea, completarTarea, editarTarea } =
+    useTaskmanager();
 
   return (
     <>
-      <Taskform onSubmit={addTask} />
+      <Taskform onSubmit={agregarTarea} />
       <div className="tareas-lista-contenedor">
-        {tasks.map((task) => (
+        {tareas.map((tarea) => (
           <Task
-            key={task.id}
-            id={task.id}
-            texto={task.text}
-            completada={task.completada}
-            completarTarea={() => updateTask(task.id, !task.completada)}
-            eliminarTarea={() => deleteTask(task.id)}
-            editarTarea={updateTask}
+            key={tarea.id}
+            id={tarea.id}
+            texto={tarea.texto}
+            completada={tarea.completada}
+            completarTarea={completarTarea}
+            eliminarTarea={eliminarTarea}
+            editarTarea={editarTarea}
           />
         ))}
       </div>

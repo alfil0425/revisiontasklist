@@ -1,28 +1,38 @@
 import { useState } from "react";
 
-function useTaskManager() {
-    const [tasks, setTasks] = useState([]);
+function useTaskmanager() {
+    const [tareas, setTareas] = useState([]);
 
-    const addTask = (task) => {
-    if (task.text.trim()) {
-        task.text = task.text.trim();
-        setTasks([...tasks, task]);
+    const agregarTarea = (tarea) => {
+    if (tarea.texto.trim()) {
+        tarea.texto = tarea.texto.trim();
+        setTareas([...tareas, tarea]);
     }
     };
 
-    const deleteTask = (id) => {
-    const updatedTasks = tasks.filter((task) => task.id !== id);
-    setTasks(updatedTasks);
+    const eliminarTarea = (id) => {
+    const tareasActualizadas = tareas.filter((tarea) => tarea.id !== id);
+    setTareas(tareasActualizadas);
     };
 
-    const updateTask = (id, newText) => {
-    const updatedTasks = tasks.map((task) =>
-        task.id === id ? { ...task, text: newText } : task
+    const completarTarea = (id) => {
+    const tareasActualizadas = tareas.map((tarea) => {
+        if (tarea.id === id) {
+        tarea.completada = !tarea.completada;
+        }
+        return tarea;
+    });
+    setTareas(tareasActualizadas);
+    };
+
+    const editarTarea = (id, nuevoTexto) => {
+    const tareasActualizadas = tareas.map((tarea) =>
+        tarea.id === id ? { ...tarea, texto: nuevoTexto } : tarea
     );
-    setTasks(updatedTasks);
+    setTareas(tareasActualizadas);
     };
 
-    return { tasks, addTask, deleteTask, updateTask };
+    return { tareas, agregarTarea, eliminarTarea, completarTarea, editarTarea };
 }
 
-export default useTaskManager;
+export default useTaskmanager;
