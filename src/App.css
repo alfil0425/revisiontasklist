@@ -7,7 +7,7 @@
 
 html, body {
     color: white;
-    background-color: #1b1b32;
+    background-image:linear-gradient();
     font-family: sans-serif;
     margin-top: 40px;
     justify-content: center;
@@ -120,6 +120,14 @@ h1{
     background-color: #3b3b4f;
 }
 .tarea-contenedor-completada {
-    background-color: rgb(17, 155, 145);
+    background-color: rgb(72, 162, 145);
     text-decoration: line-through;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    min-height: 65px;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 7px;
 }

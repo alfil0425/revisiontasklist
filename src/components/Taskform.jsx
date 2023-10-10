@@ -17,6 +17,7 @@ function Taskform(props) {
       completada: false,
     };
     props.onSubmit(tareaNueva);
+    setInput(""); // Limpia el input después de enviar la tarea
   };
 
   return (
@@ -26,10 +27,12 @@ function Taskform(props) {
         type="text"
         placeholder="Write Task"
         name="texto"
+        value={input} // Asigna el valor del input al estado input
         onChange={manejarCambio}
       />
-
-      <button className="tarea-boton">AddTask</button>
+      <button className="tarea-boton" type="submit">
+        AddTask
+      </button>
     </form>
   );
 }
