@@ -4,15 +4,6 @@ import { AiFillEdit } from "react-icons/ai";
 
 function Task ({ id, texto, completada, completarTarea, eliminarTarea, editarTarea  }) {
 
-    /*const [editarTarea, setEditarTarea] = useState(false)*/
-
-    /*function EditarTarea(){
-        const
-        return(
-            <>
-            </>
-        )
-    }*/
     return (
     <div
         className={
