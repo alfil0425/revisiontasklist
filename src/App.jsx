@@ -1,23 +1,27 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import Tasklist from "./components/Tasklist";
-import { Box, Heading, Button, Flex, Stack, Text, Container} from "@chakra-ui/react";
-import bgImage from "./imagenes/coffe.jpeg";
+import { Box, Heading, Button, Flex, Stack, Text, Container,Image} from "@chakra-ui/react";
+
+import { extendTheme } from "@chakra-ui/react";
+
 
 function App() {
   return (
-    <Container bgImage={`url($(bgImage))`}>
-      
-      
+    <Box margin={"10"} display="flex" alignItems="baseline">
       <div className="tareas-lista-principal">
-        <Heading fontFamily="" textAlign="center" textTransform="uppercase">
-            My Task
-          </Heading>
-        
+        <Heading
+          textAlign="center"
+          textTransform="uppercase"
+          color={"GrayText"}
+          fontFamily={"cursive"}
+        >
+          My Task
+        </Heading>
 
-        <Tasklist />
+        <Tasklist fontFamily={"cursive"} />
       </div>
-    </Container>
+    </Box>
   );
 }
 

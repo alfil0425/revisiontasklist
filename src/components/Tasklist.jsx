@@ -2,6 +2,7 @@ import React from "react";
 import Taskform from "./Taskform";
 import Task from "./Task";
 import useTaskmanager from "./Taskmanager"; 
+import { Container } from "@chakra-ui/react";
 
 function Tasklist() {
   const { tareas, agregarTarea, eliminarTarea, completarTarea, editarTarea } =

@@ -38,11 +38,13 @@ function Taskform(props) {
         height="48px"
         width="100px"
         border="2px"
-        borderColor="yellow.500"
+        borderColor="white.500"
+        colorScheme="golden"
         className="tarea-boton"
         type="submit"
         padding={"5%"}
         margin={"1%"}
+        _hovercolor={"gray"}
       >
         Add Task
       </Button>
